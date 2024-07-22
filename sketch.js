@@ -45,16 +45,10 @@ function draw() {
     if (dots[i].position.y < 0 || dots[i].position.y > height) {
       dots[i].velocity.y *= -1;
     }
-  }
-  
-  // Adjust dot color based on mouse position
-  let targetColor = map(mouseX, 0, width, 0, 255);
-  dotColor = lerpColor(dotColor, color(targetColor), 0.05);
-  
-  // Draw dots
-  noStroke();
-  fill(dotColor);
-  for (let i = 0; i < dots.length; i++) {
+    
+    // Draw dots
+    noStroke();
+    fill(dotColor);
     ellipse(dots[i].position.x, dots[i].position.y, 5, 5);
   }
 }
